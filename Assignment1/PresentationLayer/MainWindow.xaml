@@ -1,0 +1,52 @@
+﻿<Window x:Class="PresentationLayer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PresentationLayer"
+        mc:Ignorable="d"
+        Title="Car Management" 
+        Width="{x:Static SystemParameters.PrimaryScreenWidth}"  
+        Height="{x:Static SystemParameters.PrimaryScreenHeight}" WindowStartupLocation="CenterScreen" WindowState="Maximized"
+        >
+    <Grid>
+        <DataGrid x:Name="listCar" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="449,90,0,0" Width="NaN" SelectionChanged="listCar_SelectionChanged" FontSize="20" Background="White"/>
+        <GroupBox Header="Manage" Height="NaN" Margin="10,382,0,214" Width="434" HorizontalAlignment="Left" FontSize="16">
+            <Grid Height="214" VerticalAlignment="Top" Margin="25,0,25,0">
+                <Button x:Name="btnInsert" Content="Insert" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Height="40" Click="btnInsert_Click" Margin="10,10,0,0" Background="#FF619EC6" Foreground="White"/>
+                <Button x:Name="btnUpdate" Content="Update" Margin="195,10,0,0" VerticalAlignment="Top" Height="40" Click="btnUpdate_Click" HorizontalAlignment="Left" Width="130" Background="#FF619EC6" Foreground="White"/>
+                <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Width="130" Height="40" Click="btnDelete_Click" Background="#FF619EC6" Foreground="White"/>
+                <Button x:Name="btnLoad" Content="Load" HorizontalAlignment="Left" Margin="195,55,0,0" VerticalAlignment="Top" Width="130" Height="40" Click="btnLoad_Click" Background="#FF619EC6" Foreground="White"/>
+                <Button x:Name="btnExist" Content="Cancel" HorizontalAlignment="Center" Margin="0,116,0,0" Width="130" Click="btnExist_Click" Height="40" VerticalAlignment="Top" Background="#FF619EC6" Foreground="White"/>
+            </Grid>
+        </GroupBox>
+        <Grid HorizontalAlignment="Left" Height="276" Margin="20,101,0,0" VerticalAlignment="Top" Width="402">
+            <Label Content="Id:" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Width="99" Height="32" FontSize="16"/>
+            <Label Content="Name:" HorizontalAlignment="Left" Margin="0,47,0,0" VerticalAlignment="Top" Width="99" Height="30" FontSize="16"/>
+            <Label Content="Brand:" HorizontalAlignment="Left" Margin="0,91,0,0" VerticalAlignment="Top" Width="99" Height="32" FontSize="16"/>
+            <Label Content="Color:" HorizontalAlignment="Left" Margin="0,137,0,0" VerticalAlignment="Top" Width="99" Height="30" FontSize="16"/>
+            <Label Content="Manufacture:" HorizontalAlignment="Left" Margin="0,181,0,0" VerticalAlignment="Top" Width="99" Height="32" FontSize="16"/>
+            <Label Content="Category:" HorizontalAlignment="Left" Margin="0,227,0,0" VerticalAlignment="Top" Width="99" Height="30" FontSize="16"/>
+            <TextBox x:Name="txtId" HorizontalAlignment="Left"  VerticalContentAlignment="Center" Margin="104,0,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="298" Height="40" FontSize="16"/>
+            <TextBox x:Name="txtName" HorizontalAlignment="Left"  VerticalContentAlignment="Center" Margin="104,42,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="298" Height="40" FontSize="16"/>
+            <TextBox x:Name="txtBrand" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="104,87,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="298" Height="40" FontSize="16"/>
+            <TextBox x:Name="txtColor" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="104,132,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="298" Height="40" FontSize="16"/>
+            <TextBox x:Name="txtManufacture" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="104,177,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="298" Height="40" FontSize="16"/>
+            <ComboBox x:Name="comboCategory" HorizontalAlignment="Left" Margin="104,222,0,0" VerticalAlignment="Top" Width="298" Height="40" FontSize="16" BorderBrush="White">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF0F0F0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+            </ComboBox>
+
+        </Grid>
+        <Rectangle HorizontalAlignment="Left" Height="287" Margin="10,90,0,0" Stroke="Black" VerticalAlignment="Top" Width="434"/>
+
+        <Label Content="Car Management" Margin="500,11,500,0" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" VerticalAlignment="Top" FontSize="48" FontFamily="Arial Rounded MT Bold" Foreground="#FF6260B8"/>
+        <Label x:Name="Member" Content="Welcome" HorizontalAlignment="Left" Margin="20,680,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Button x:Name="btnLogout" Content="Log Out" HorizontalAlignment="Left" Margin="154,719,0,0" VerticalAlignment="Top" Width="134" Height="36" FontSize="18" Click="btnLogout_Click" Background="#FFF17070" Foreground="#FFF6F6F6"/>
+
+    </Grid>
+</Window>
